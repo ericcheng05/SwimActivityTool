@@ -56,3 +56,10 @@ sudo service php7.4-fpm restart
 ```
 
 (Optional) [Install Postfix for Mail Contact](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-on-ubuntu-20-04)
+
+## Encounter Errors?
+
+#### Failed to Upload Activity File to the Web Apps
+1. Check Nginx Log in /var/log/nginx/error.log
+2. If there is an PDO Error, it might be Permission Settings of the SQLite File where www-data cannot write the file. Check the Ownership and Change to www-data (Nginx Default)
+
