@@ -6,10 +6,12 @@ Correction of Swim Event Created by Garmin Watches
 
 ## Procedures
 
-You first need a linux server. Instructions is for Ubuntu 20.04
+### Instructions is for Ubuntu 20.04
 
-'sudo apt update'
+```
+sudo apt update
 sudo apt upgrade
+```
 sudo timedatectl set-timezone Canada/Eastern
  
 sudo apt install php-fpm
