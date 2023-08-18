@@ -32,8 +32,8 @@ mkdir www/data
 cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
 sudo chown -R -v  www-data:www-data www/data 
 sudo cp www /var/www/swt
-sudo cp  swimmingwatchtools.com /etc/nginx/sites-available
-sudo ln -s /etc/nginx/sites-available/swimmingwatchtools.com /etc/nginx/sites-enabled/
+sudo cp  example.com.conf /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/
 ```
 
 Make file for the Modules
