@@ -26,7 +26,7 @@ sudo apt install php php-sqlite3 php-zip php-dev sqlite3 nginx
 
 Clone the Code from Repo, Update Owner
 ```
-git clone https://swimmingwatchtools@bitbucket.org/swimmingwatchtools/phpeditor.git swt
+git clone https://github.com/ericcheng05/SwimActivityTool.git swt
 cd swt
 mkdir www/data
 cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
