@@ -32,17 +32,12 @@ cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
 sudo chown -R -v  www-data:www-data www/data 
 sudo cp -R www /var/www/swt
 ```
+#### For Ubuntu  20.04
 
-For Ubuntu  20.04
+Copy Nginx Config
 ```
 sudo cp  example.com.php74.conf /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/example.com.php74.conf /etc/nginx/sites-enabled/
-```
-
-For Ubuntu  22.04
-```
-sudo cp  example.com.php81.conf /etc/nginx/sites-available
-sudo ln -s /etc/nginx/sites-available/example.com.php81.conf /etc/nginx/sites-enabled/
 ```
 
 Make file for the Modules
@@ -53,15 +48,51 @@ phpize
 make
 sudo cp modules/swt.so /usr/lib/php/20190902/
 ```
+
 Add One Line for php.ini File
 ```
 sudo vim /etc/php/7.4/fpm/php.ini
 extension=swt.so
 ```
+
 Restart NGINX and PHP
 ```
 sudo service nginx restart
 sudo service php7.4-fpm restart
+```
+
+#### For Ubuntu  22.04
+
+Copy Nginx Config
+```
+sudo cp  example.com.php81.conf /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/example.com.php81.conf /etc/nginx/sites-enabled/
+```
+
+Make file for the Modules
+``` 
+cd ext
+phpize
+./configure
+```
+Remove Function Parameter "TSRMLS_C" on Line 115
+```
+vim ext/swt_php.cpp
+```
+Continue Make file for the Modules
+```
+make
+sudo cp modules/swt.so /usr/lib/php/20210902/
+```
+Add One Line for php.ini File
+```
+sudo vim /etc/php/8.1/fpm/php.ini
+extension=swt.so
+```
+Restart NGINX and PHP
+```
+sudo service nginx restart
+sudo service php8.1-fpm restart
 ```
 
 (Optional) [Install Postfix for Mail Contact](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-on-ubuntu-20-04)
