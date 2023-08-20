@@ -32,7 +32,15 @@ cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
 sudo chown -R -v  www-data:www-data www/data 
 sudo cp -R www /var/www/swt
 ```
-```Ubuntu  20.04
+
+For Ubuntu  20.04
+```
+sudo cp  example.com.php74.conf /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/example.com.php74.conf /etc/nginx/sites-enabled/
+```
+
+For Ubuntu  22.04
+```
 sudo cp  example.com.php81.conf /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/example.com.php81.conf /etc/nginx/sites-enabled/
 ```
