@@ -20,8 +20,7 @@ sudo timedatectl set-timezone Canada/Eastern
 
 Install NGINX, PHP and SQLite3
 ```
-sudo apt install php-fpm
-sudo apt install php php-sqlite3 php-zip php-dev sqlite3 nginx 
+sudo apt install php php-fpm php-sqlite3 php-zip php-dev sqlite3 nginx 
 ```
 
 Clone the Code from Repo, Update Owner
