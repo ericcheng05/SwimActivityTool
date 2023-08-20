@@ -6,7 +6,7 @@ Correction of Swim Event Created by Garmin Watches
 
 ## Procedures
 
-### Instructions for Ubuntu 20.04
+### Instructions for Ubuntu
 
 Update APT
 ```
@@ -31,8 +31,10 @@ mkdir www/data
 cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
 sudo chown -R -v  www-data:www-data www/data 
 sudo cp -R www /var/www/swt
-sudo cp  example.com.conf /etc/nginx/sites-available
-sudo ln -s /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/
+```
+``` Ubuntu  20.04
+sudo cp  example.com.php81.conf /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/example.com.php81.conf /etc/nginx/sites-enabled/
 ```
 
 Make file for the Modules
