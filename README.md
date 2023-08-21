@@ -6,16 +6,12 @@ Correction of Swim Event Created by Garmin Watches
 
 ## Procedures
 
-### Instructions for Ubuntu
+### Instructions for Ubuntu 20.04
 
 Update APT
 ```
 sudo apt update
 sudo apt upgrade
-```
-(Optional) Change Time Zone for the Server
-```
-sudo timedatectl set-timezone Canada/Eastern
 ```
 
 Install NGINX, PHP and SQLite3
@@ -32,7 +28,6 @@ cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
 sudo chown -R -v  www-data:www-data www/data 
 sudo cp -R www /var/www/swt
 ```
-#### For Ubuntu  20.04
 
 Copy Nginx Config
 ```
@@ -61,7 +56,31 @@ sudo service nginx restart
 sudo service php7.4-fpm restart
 ```
 
+### Instructions for Ubuntu 22.04
+
+
 #### For Ubuntu  22.04
+
+Update APT
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Install NGINX, PHP and SQLite3
+```
+sudo apt install php php-fpm php-sqlite3 php-zip php-dev sqlite3 nginx 
+```
+
+Clone the Code from Repo, Update Owner
+```
+git clone https://github.com/ericcheng05/SwimActivityTool.git swt
+cd swt
+mkdir www/data
+cat sql/swtdb.sql | sqlite3 www/data/swt.sqlite3
+sudo chown -R -v  www-data:www-data www/data 
+sudo cp -R www /var/www/swt
+```
 
 Copy Nginx Config
 ```
